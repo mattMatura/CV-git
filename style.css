@@ -52,7 +52,7 @@ header .highlight{
 }
 
 #PS p{
-   font-size: 17px;
+   font-size: 20px;
    color: white;
    text-shadow: 0 2px 5px rgba(0,0,0,.5);
    box-shadow: 0 5px 25px rgba(0,0,0,.5);
@@ -61,7 +61,7 @@ header .highlight{
 
 #skills{
    min-height:800px;
-   background:url('./img/key.jpg') no-repeat 0 -200px;
+   background:url('./img/key.jpg') no-repeat 0 -160px;
    text-align: center;
    color: #ffffff;
    border-bottom: #e8491d 15px solid;
@@ -77,12 +77,12 @@ header .highlight{
    color: #e8491d;
 }
 
-#skills p{
-font-size: 17px;
+#skills li{
+font-size: 20px;
 }
 
 #skills li:hover{
-   font-size: 17px;
+   font-size: 22px;
    text-shadow: 0 2px 5px rgba(0,0,0,.5);
    box-shadow: 0 5px 25px rgba(0,0,0,.5);
 }
@@ -106,17 +106,20 @@ font-size: 17px;
    color: #e8491d;
 }
 
+#xp li:{  
+font-size: 22px;
+}
+
 #xp p:{
    
-   font-size: 17px;
-   text-shadow: 0 2px 5px rgba(0,0,0,.5);
-   box-shadow: 0 5px 25px rgba(0,0,0,.5);
+   font-size: 22px;
 }
+
 #xp li:hover{
    color: white; 
    text-shadow: 0 2px 5px rgba(0,0,0,.5);
    box-shadow: 0 5px 25px rgba(0,0,0,.5);
-   font-size: 17px;
+   font-size: 23px;
 }
 
 #education {
@@ -137,15 +140,15 @@ font-size: 17px;
    color: #e8491d;
 }
 
-#education p{
-font-size: 17px;
+#education li{
+font-size: 20px;
 }
 
 #education li:hover{
    color: white; 
    text-shadow: 0 2px 5px rgba(0,0,0,.5);
    box-shadow: 0 5px 25px rgba(0,0,0,.5);
-   font-size: 17px;
+   font-size: 23px;
 }
 
 #extracur {
@@ -166,12 +169,12 @@ font-size: 17px;
    color: #e8491d;
 }
 
-#extracur p{
-font-size: 17px;
+#extracur li{
+font-size: 20px;
 }
 
 #extracur li:hover{
-   font-size: 17px;
+   font-size: 23px;
    text-shadow: 0 2px 5px rgba(0,0,0,.5);
    box-shadow: 0 5px 25px rgba(0,0,0,.5);
 }
@@ -196,7 +199,7 @@ font-size: 17px;
 
 
 #references li:hover{
-   font-size: 17px;
+   font-size: 23px;
    text-shadow: 0 2px 5px rgba(0,0,0,.5);
    box-shadow: 0 5px 25px rgba(0,0,0,.5);
 }
@@ -204,6 +207,7 @@ font-size: 17px;
 #references a{
    color:#e8491d;
    font-weight: bold;
+   font-size:20px
 }
 
 #references a:hover{
@@ -217,6 +221,7 @@ footer{
    padding-top: 30px;
    min-height: 70px;
    border-bottom: #e8491d 3px solid;
+   font-size: 20px;
    text-align: center;
 }
 
