@@ -54,11 +54,16 @@ header .highlight{
 #PS p{
    font-size: 20px;
    color: white;
-   text-shadow: 0 2px 5px rgba(0,0,0,.5);
-   box-shadow: 0 5px 25px rgba(0,0,0,.5);
+   
    animation: text 3s 1;
 }
 
+#PS p:hover{
+   font-size: 23px;
+   color: white;
+   text-shadow: 0 2px 5px rgba(0,0,0,.5);
+   box-shadow: 0 5px 25px rgba(0,0,0,.5);
+}
 #skills{
    min-height:800px;
    background:url('./img/key.jpg') no-repeat 0 -160px;
@@ -94,6 +99,7 @@ font-size: 20px;
    text-align: center;
    color: #ffffff;
    border-bottom: #e8491d 15px solid;
+   font-size: 20px;
 }
 
 #xp h5{
@@ -110,9 +116,10 @@ font-size: 20px;
 font-size: 22px;
 }
 
-#xp p:{
-   
-   font-size: 22px;
+#xp p:hover{
+   text-shadow: 0 2px 5px rgba(0,0,0,.5);
+   box-shadow: 0 5px 25px rgba(0,0,0,.5);
+   font-size: 23px;
 }
 
 #xp li:hover{
