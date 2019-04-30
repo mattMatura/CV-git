@@ -35,7 +35,7 @@ header .highlight{
 
 #PS{
    min-height:800px;
-   background:url('./wall.jpg') no-repeat 0 -200px;
+   background:url('./img/wall.jpg') no-repeat 0 -200px;
    text-align: center;
    color: #ffffff;
    border-bottom: #e8491d 15px solid;
@@ -61,7 +61,7 @@ header .highlight{
 
 #skills{
    min-height:800px;
-   background:url('./key.jpg') no-repeat 0 -200px;
+   background:url('./img/key.jpg') no-repeat 0 -200px;
    text-align: center;
    color: #ffffff;
    border-bottom: #e8491d 15px solid;
@@ -90,7 +90,7 @@ font-size: 17px;
 
 #xp{
    min-height:800px;
-   background:url('./last.jpg') no-repeat 0 -160px;
+   background:url('./img/last.jpg') no-repeat 0 -160px;
    text-align: center;
    color: #ffffff;
    border-bottom: #e8491d 15px solid;
@@ -121,7 +121,7 @@ font-size: 17px;
 
 #education {
    min-height:800px;
-   background:url('./books.jpg') no-repeat 0 -700px;
+   background:url('./img/books.jpg') no-repeat 0 -700px;
    text-align: center;
    color: #ffffff;
    border-bottom: #e8491d 15px solid;
@@ -150,7 +150,7 @@ font-size: 17px;
 
 #extracur {
    min-height:800px;
-   background:url('./fun.jpg') no-repeat 0 -150px;
+   background:url('./img/fun.jpg') no-repeat 0 -150px;
    text-align: center;
    color: #ffffff;
    border-bottom: #e8491d 15px solid;
@@ -178,7 +178,7 @@ font-size: 17px;
 
 #references {
    min-height:800px;
-   background:url('./thisone.jpg') no-repeat 0 -400px;
+   background:url('./img/thisone.jpg') no-repeat 0 -400px;
    text-align: center;
    color: #ffffff;
    border-bottom: #e8491d 5px solid;
