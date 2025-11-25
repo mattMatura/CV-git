@@ -1,134 +1,854 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="style.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="./css/reset.css"> <!-- CSS reset -->
-	    <link rel="stylesheet" href="./css/styler.css"> <!-- Resource style -->
-	    <script src="js/modernizr.js"></script> <!-- Modernizr -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-        <title>Matura CV</title>
-    </head>
-    <body>
-        <header>
-          <header class="cd-header">
-		<a href="about.html" class="cd-logo"><img src="./img/logo3.png" alt="Logo"></a>
-		<a href="#0" class="cd-3d-nav-trigger">
-			Menu
-			<span></span>
-		</a>
-	</header> <!-- .cd-header -->
-	
-	
-	<a class="gotopbtn" href="#"> <i class="fas fa-arrow-up"></i> </a>
-	<nav class="cd-3d-nav-container">
-		<ul class="cd-3d-nav">
-			<li class="cd-selected">
-				<a href="#skills">Skills</a>
-			</li>
+<html lang="en" class="scroll-smooth antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Strategic Engineer: Executive Handbook 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Design System: "Cupertino Pro" -->
+    <!-- Content Strategy: "The Ultimate Guide" - High density, organized by progressive disclosure. -->
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        apple: {
+                            bg: '#F5F5F7',
+                            text: '#1D1D1F',
+                            subtext: '#86868B',
+                            blue: '#0071E3',
+                            blueHover: '#0077ED',
+                            card: '#FFFFFF',
+                            border: '#D2D2D7',
+                            success: '#34C759',
+                            warning: '#FF9F0A',
+                            danger: '#FF3B30',
+                            purple: '#AF52DE',
+                            indigo: '#5856D6'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 24px rgba(0,0,0,0.04)',
+                        'hover': '0 8px 32px rgba(0,0,0,0.08)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-			<li>
-				<a href="#xp">EPERIENCE</a>
-			</li>
+    <style>
+        body {
+            background-color: #F5F5F7;
+            color: #1D1D1F;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+        .nav-scroll::-webkit-scrollbar {
+            display: none; 
+        }
+        .nav-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .nav-link.active {
+            color: #1D1D1F;
+            background-color: rgba(0,0,0,0.05);
+            font-weight: 600;
+        }
+        /* Refined Detail/Summary styling for information density */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        details > summary:focus {
+            outline: none;
+        }
+        .tab-btn.active {
+            color: #0071E3;
+            border-bottom: 2px solid #0071E3;
+        }
+        .prose-sm li {
+            margin-bottom: 0.25rem;
+        }
+        .dense-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body class="selection:bg-apple-blue selection:text-white pb-24">
 
-			<li>
-				<a href="#education">EDUCATIONAL QUALIFICATIONS</a>
-			</li>
-
-			<li>
-				<a href="#extracur">EXTRACURRICULAR ACTIVITIES</a>
-			</li>
-
-			<li>
-				<a href="#references">REFERENCES</a>
-			</li>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-200/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-lg font-bold tracking-tight text-apple-text flex items-center gap-2 flex-shrink-0 mr-6">
+                <span class="w-3 h-3 rounded-full bg-apple-blue"></span>
+                Strategic<span class="text-apple-subtext font-normal">Engineer</span>
+            </a>
             
-		</ul> <!-- .cd-3d-nav -->
+            <!-- Horizontal Scrollable Nav -->
+            <div class="flex-grow overflow-x-auto nav-scroll whitespace-nowrap mask-linear">
+                <div class="flex space-x-2 p-1">
+                    <a href="#intro" class="nav-link px-3 py-1.5 text-xs text-apple-subtext rounded-full hover:text-apple-text transition-colors">Vision</a>
+                    <a href="#tech" class="nav-link px-3 py-1.5 text-xs text-apple-subtext rounded-full hover:text-apple-text transition-colors">Tech Stack</a>
+                    <a href="#strategy" class="nav-link px-3 py-1.5 text-xs text-apple-subtext rounded-full hover:text-apple-text transition-colors">Strategy Physics</a>
+                    <a href="#finance" class="nav-link px-3 py-1.5 text-xs text-apple-subtext rounded-full hover:text-apple-text transition-colors">Financial Eng</a>
+                    <a href="#ops" class="nav-link px-3 py-1.5 text-xs text-apple-subtext rounded-full hover:text-apple-text transition-colors">Org & Ops</a>
+                    <a href="#career" class="nav-link px-3 py-1.5 text-xs text-apple-subtext rounded-full hover:text-apple-text transition-colors">Career Path</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-		<span class="cd-marker color-1"></span>	
-	</nav> <!-- .cd-3d-nav-container -->
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
-          <div class="container">
-           <div id="top-top">
-             <h1><span class ="highlight"> MUFARO M. MATURA</span></h1>
-             <p>33 THOMAS HILL RD,RIVERSIDE GWERU ZIMBABWE</p>
-             <p>maturamufaro@gmail.com</p>
-             <p>Ph: +263 783957858</p>
-             <p> </p>
-             <p> </p>
-             <p> </p>
-           </div>
-          </div>
-        </header>
-        <section id="PS">
-          <h5>PROFESSIONAL SUMMARY</h5>
-          <P>Focused, goal oriented and energetic Software Developer, 
-          <p>with a solid history of achievements and strong organizational</p> 
-          <p>and prioritization abilities.</p>
-          <p>Excellent Computer and People skills.</P>
-        </section>
-        <section id="skills">
-           <h5>SKILLS</h5>
-           <ul>
-              <li>Programming (Python, Web design)</li>
-              <li>Language (English, Shona)</li>
-              <li>Technology Design</li>
-              <li>Computers and Electronics</li>
-              <li>Microsoft Office (HEXCO certification 2014)</li>
-              <Li>Cyber Security (Basic Level)</Li>
-           </ul>
-        </section>
-        <section id="xp">
-            <h5>Experience</h5>
-            <p>IT Intern: July 2015 - June 2017</p>
-            <p>6th Street Dental Clinic, Gweru, Midlands Province</p>
-            <ul>
-               <li>Use computers for various applications, such as database management or word processing.</li>
-               <li>Answer telephones and give information to callers, take messages, or transfer calls to appropriate individuals (When understaffed).</li>
-               <li>Create, maintain, and enter information into databases.</li>
-               <li>Operate office equipment, such as computer system, copiers, or phone systems and arrange for repairs when equipment malfunctions.</li>
-               <li>Operate new office technologies as they are developed and implemented.</li>    
-            </ul>
-            </section>
-        <section id="education">
-            <h5>EDUCATIONAL QUALIFICATIONS</h5>
-            <ul>
-               <ul><b>Ordinary Level</b>
-                <li>Passes Include Maths, Science, Computer Science and English</li>
-               </ul>
-               <ul><b>Advanced Level</b>
-                <li>Passes in Math, Physics and Computer Science</li>
-               </ul>
-               <ul><b>Current Studies</b>
-                <li>Studying Btech in Computer Science at Harare Institute of Technology with the following transcripts attached</li>
-                </ul>
-                </ul>
-        </section>
-        <section id="extracur">
-             <h5>EXTRACURRICULAR ACTIVITIES</h5>
-             <ul>
-                <ul><b>Minister of Sport Culture and Recreation (Student Representative Council)</b>
-                   <li>Actively involved in all activities that involve sport, cultural events and entertainment at my current university</li>
-                </ul>
-                </ul>
-        </section>
-        <section id="references">
-        <h5>REFERENCES</h5>
-        <ul>
-               <ul><b>Mr Makausi</b>
-                <li>Contact: <a href="mailto: tmakausi@hit.ac.zw">tmakausi@hit.ac.zw</a></li>
-               </ul>
-               <ul><b>Dr T. Mukorera</b>
-                <li>Contact: <a href="mailto: tmukorera@live.com">tmukorera@live.com</a></li>
-        </ul>
-        </section>
-        <footer>
-            <p>Mufaro Matura CV</p>
-            <p>Contact: <a href="mailto: maturamufaro@protonmail.ch">maturamufaro@protonmail.ch</a></p>
-        </footer>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-28">
 
-        </ul>
-    </body>
+        <!-- SECTION: INTRO -->
+        <section id="intro" class="mb-24 animate-fade-in">
+            <div class="max-w-4xl mx-auto text-center md:text-left">
+                <span class="inline-block px-3 py-1 mb-4 text-[10px] font-bold tracking-widest text-apple-blue uppercase bg-blue-50 rounded-full">2025 Compendium</span>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-apple-text mb-6">
+                    The Convergent<br>Product Leader.
+                </h1>
+                <p class="text-xl text-apple-subtext leading-relaxed mb-8">
+                    The rigid bifurcation between "Technical" and "Business" roles is dissolving. The market now demands a <strong>"Swiss Army Knife"</strong> professional: a hybrid operator capable of architecting data pipelines, calculating unit economics, and navigating boardrooms. 
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+                    <div class="p-4 bg-white rounded-2xl shadow-soft border border-gray-100">
+                        <strong class="block text-sm text-apple-text mb-1">Architect Outcomes</strong>
+                        <p class="text-xs text-apple-subtext">Move from "gathering requirements" to designing systems that scale.</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-2xl shadow-soft border border-gray-100">
+                        <strong class="block text-sm text-apple-text mb-1">Manage Risk</strong>
+                        <p class="text-xs text-apple-subtext">Balance CAP theorem trade-offs and financial burn multiples.</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-2xl shadow-soft border border-gray-100">
+                        <strong class="block text-sm text-apple-text mb-1">Drive Strategy</strong>
+                        <p class="text-xs text-apple-subtext">Apply Game Theory and 7 Powers to create defensibility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: TECH STACK -->
+        <section id="tech" class="mb-32 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+                <div class="w-8 h-8 rounded-lg bg-gray-900 text-white flex items-center justify-center font-bold text-sm">I</div>
+                <h2 class="text-2xl font-bold tracking-tight text-apple-text">Advanced Data & Architecture</h2>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="flex space-x-8 border-b border-gray-200 mb-8 overflow-x-auto nav-scroll">
+                <button class="tab-btn active pb-3 text-sm font-semibold transition-colors whitespace-nowrap" onclick="switchTab('tech', 'data')">Data Engineering</button>
+                <button class="tab-btn pb-3 text-sm font-medium text-apple-subtext hover:text-apple-text transition-colors whitespace-nowrap" onclick="switchTab('tech', 'ai')">AI & Agents</button>
+                <button class="tab-btn pb-3 text-sm font-medium text-apple-subtext hover:text-apple-text transition-colors whitespace-nowrap" onclick="switchTab('tech', 'api')">API & Software Arch</button>
+                <button class="tab-btn pb-3 text-sm font-medium text-apple-subtext hover:text-apple-text transition-colors whitespace-nowrap" onclick="switchTab('tech', 'infra')">Cloud & Security</button>
+            </div>
+
+            <!-- TAB: DATA ENGINEERING -->
+            <div id="tech-data" class="space-y-8 animate-fade-in">
+                <!-- Data Stack Evolution -->
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                    <h3 class="text-xl font-bold text-apple-text mb-4">The Modern Data Stack (ELT)</h3>
+                    <p class="text-sm text-apple-subtext mb-6">
+                        The shift from ETL (Extract-Transform-Load) to ELT (Extract-Load-Transform) decouples compute from storage (Snowflake/BigQuery). Transformations happen <em>in-situ</em> using SQL (dbt), treating data as code (version controlled assets).
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-2xl">
+                            <h4 class="font-bold text-sm text-apple-text mb-2">Incremental Models</h4>
+                            <p class="text-xs text-apple-subtext leading-relaxed">
+                                Recomputing full history is expensive. Use <code>is_incremental()</code> to process only new records based on timestamps.
+                                <br><br>
+                                <strong>Strategic Value:</strong> If dashboards are slow or expensive, the root cause is often a failure to implement efficient incremental logic.
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-2xl">
+                            <h4 class="font-bold text-sm text-apple-text mb-2">Data Modeling Paradigms</h4>
+                            <ul class="text-xs text-apple-subtext space-y-3">
+                                <li>
+                                    <strong class="text-apple-text">Star Schema (Kimball):</strong> Fact Table surrounded by Dimension Tables. Optimized for BI (Tableau). <em>Limit:</em> Rigid; schema evolution is painful.
+                                </li>
+                                <li>
+                                    <strong class="text-apple-text">Activity Schema (Narrator):</strong> Single wide time-series table. Entity + Activity + Timestamp. <em>Strategic Value:</em> Enables foreign-keyless joins and "time-travel" queries for rapid product analytics.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced SQL -->
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                    <h3 class="text-xl font-bold text-apple-text mb-4">Advanced SQL: The Language of Inquiry</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Ranking -->
+                        <div class="p-4 border border-gray-100 rounded-2xl hover:border-apple-blue transition-colors">
+                            <span class="text-xs font-bold text-apple-blue uppercase">Ranking</span>
+                            <div class="mt-2 font-mono text-xs bg-gray-100 p-2 rounded">ROW_NUMBER(), RANK()</div>
+                            <p class="text-xs text-apple-subtext mt-2">Assign sequential integers. Use to identify a user's "first" or "most recent" action.</p>
+                        </div>
+                        <!-- Offset -->
+                        <div class="p-4 border border-gray-100 rounded-2xl hover:border-apple-blue transition-colors">
+                            <span class="text-xs font-bold text-apple-blue uppercase">Offset</span>
+                            <div class="mt-2 font-mono text-xs bg-gray-100 p-2 rounded">LAG(), LEAD()</div>
+                            <p class="text-xs text-apple-subtext mt-2">Access previous/next rows. Critical for calculating time intervals between events (e.g., signup -> purchase).</p>
+                        </div>
+                        <!-- CTEs -->
+                        <div class="p-4 border border-gray-100 rounded-2xl hover:border-apple-blue transition-colors">
+                            <span class="text-xs font-bold text-apple-blue uppercase">Modularity</span>
+                            <div class="mt-2 font-mono text-xs bg-gray-100 p-2 rounded">WITH clause (CTEs)</div>
+                            <p class="text-xs text-apple-subtext mt-2">Break monolithic queries into logical steps. Use <strong>Recursive CTEs</strong> for hierarchical data (org charts, referral trees).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: AI -->
+            <div id="tech-ai" class="hidden space-y-8 animate-fade-in">
+                <!-- RAG -->
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                    <h3 class="text-xl font-bold text-apple-text mb-4">RAG Architecture (Retrieval Augmented Generation)</h3>
+                    <p class="text-sm text-apple-subtext mb-6">The standard for grounding LLMs in proprietary data to prevent hallucinations.</p>
+                    <div class="relative pl-8 space-y-8 border-l-2 border-gray-100">
+                        <div class="relative">
+                            <div class="absolute -left-[41px] bg-white border-2 border-gray-200 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold">1</div>
+                            <h4 class="font-bold text-sm text-apple-text">Ingestion & Chunking</h4>
+                            <p class="text-xs text-apple-subtext mt-1">Split data (PDFs, Notion) into segments. Chunk size is a critical tuning parameter for context precision.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[41px] bg-white border-2 border-gray-200 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold">2</div>
+                            <h4 class="font-bold text-sm text-apple-text">Vector Embeddings</h4>
+                            <p class="text-xs text-apple-subtext mt-1">Convert text to high-dimensional math vectors (e.g., OpenAI text-embedding-3). Semantic meaning = mathematical proximity.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[41px] bg-white border-2 border-gray-200 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold">3</div>
+                            <h4 class="font-bold text-sm text-apple-text">Vector Database (ANN Search)</h4>
+                            <p class="text-xs text-apple-subtext mt-1">Store in Pinecone/Weaviate. Perform Approximate Nearest Neighbor search to retrieve relevant chunks.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[41px] bg-white border-2 border-gray-200 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold">4</div>
+                            <h4 class="font-bold text-sm text-apple-text">Synthesis</h4>
+                            <p class="text-xs text-apple-subtext mt-1">Inject chunks into System Prompt. "Answer using only the provided context."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agentic Workflows -->
+                <div class="bg-gray-900 rounded-3xl p-8 shadow-soft border border-gray-800 text-white">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Agentic Workflows</h3>
+                            <p class="text-sm text-gray-400 mb-6">Beyond Chatbots: Systems that reason and act.</p>
+                        </div>
+                        <span class="bg-blue-900 text-blue-200 text-[10px] px-2 py-1 rounded font-bold uppercase">Future of AI</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-blue-400 text-sm font-bold mb-3">The ReAct Loop</h4>
+                            <div class="bg-gray-800 p-4 rounded-xl text-xs space-y-2 font-mono text-gray-300">
+                                <div class="flex gap-2"><span class="text-purple-400">1. Thought:</span> Analyze request.</div>
+                                <div class="flex gap-2"><span class="text-purple-400">2. Plan:</span> Determine tools needed.</div>
+                                <div class="flex gap-2"><span class="text-purple-400">3. Action:</span> search_crm(client).</div>
+                                <div class="flex gap-2"><span class="text-purple-400">4. Observation:</span> Read output.</div>
+                                <div class="flex gap-2"><span class="text-purple-400">5. Loop:</span> Iterate until goal met.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-blue-400 text-sm font-bold mb-3">Orchestration & Configuration</h4>
+                            <ul class="space-y-3 text-xs text-gray-400">
+                                <li><strong>LangChain:</strong> Modular abstractions for connecting LLMs to tools.</li>
+                                <li><strong>LangGraph:</strong> Graph-based architecture for stateful, cyclical flows (loops, retries).</li>
+                                <li><strong>Chain-of-Thought (CoT):</strong> Prompting model to "think step-by-step" to expose reasoning.</li>
+                                <li><strong>Few-Shot Prompting:</strong> Providing high-quality input-output examples to anchor behavior.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: API & SW ARCH -->
+            <div id="tech-api" class="hidden space-y-8 animate-fade-in">
+                <!-- API Architecture -->
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                    <h3 class="text-xl font-bold text-apple-text mb-6">API Architectures: Strategic Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead>
+                                <tr class="border-b border-gray-200">
+                                    <th class="pb-3 font-bold text-apple-text">Type</th>
+                                    <th class="pb-3 font-bold text-apple-text">Core Concept</th>
+                                    <th class="pb-3 font-bold text-apple-text">Strategic Strength</th>
+                                    <th class="pb-3 font-bold text-apple-text">Weakness</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs text-apple-subtext">
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 font-semibold text-apple-text">REST</td>
+                                    <td class="py-4">Resource-based (GET, POST). Returns fixed JSON.</td>
+                                    <td class="py-4">Universally supported, easy to cache, scalable.</td>
+                                    <td class="py-4">Over-fetching data.</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 font-semibold text-apple-text">GraphQL</td>
+                                    <td class="py-4">Query-based. Client asks for specific fields.</td>
+                                    <td class="py-4">Decouples frontend; eliminates over-fetching.</td>
+                                    <td class="py-4">Complex caching; steep learning curve.</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 font-semibold text-apple-text">gRPC</td>
+                                    <td class="py-4">Action-based. Binary serialization (Protobuf).</td>
+                                    <td class="py-4">Extremely low latency (internal microservices).</td>
+                                    <td class="py-4">Not human-readable; limited browser support.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 font-semibold text-apple-text">Webhooks</td>
+                                    <td class="py-4">Event-driven. Server pushes to client URL.</td>
+                                    <td class="py-4">Real-time updates without polling.</td>
+                                    <td class="py-4">Client must run a server to receive; retry logic critical.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-6 bg-blue-50 p-4 rounded-xl border border-blue-100">
+                        <strong class="text-sm text-apple-blue">API-First Strategy:</strong>
+                        <span class="text-xs text-apple-subtext">Define API contract (OpenAPI/Swagger) before writing code. Allows parallel frontend/backend dev and prevents "Backend-for-Frontend" silos.</span>
+                    </div>
+                </div>
+
+                <!-- Systems Thinking (DDD & SOLID) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                        <h3 class="text-lg font-bold text-apple-text mb-4">Domain-Driven Design (DDD)</h3>
+                        <div class="space-y-4">
+                            <details class="group">
+                                <summary class="cursor-pointer font-semibold text-sm text-apple-text flex justify-between">
+                                    Ubiquitous Language
+                                    <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
+                                </summary>
+                                <p class="text-xs text-apple-subtext mt-2">Code language must match business language. If Business says "Customer" and Code says "User", bugs happen.</p>
+                            </details>
+                            <details class="group">
+                                <summary class="cursor-pointer font-semibold text-sm text-apple-text flex justify-between">
+                                    Bounded Contexts
+                                    <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
+                                </summary>
+                                <p class="text-xs text-apple-subtext mt-2">Defines logical boundaries. "Product" means something different to Inventory (weight) vs Marketing (copy). Separate them to prevent "God Objects". Align teams to these contexts (Conway's Law).</p>
+                            </details>
+                            <div class="pt-4 border-t border-gray-100">
+                                <strong class="text-sm text-apple-text">Event Storming:</strong>
+                                <p class="text-xs text-apple-subtext mt-1">Workshop to map "Domain Events" on a timeline. Best way to identify bottlenecks before coding.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                        <h3 class="text-lg font-bold text-apple-text mb-4">SOLID Principles (Product Logic)</h3>
+                        <ul class="text-xs text-apple-subtext space-y-2">
+                            <li><strong>SRP:</strong> Single Responsibility. Avoid "kitchen sink" features.</li>
+                            <li><strong>OCP:</strong> Open/Closed. Add functionality by adding code, not rewriting old code.</li>
+                            <li><strong>LSP:</strong> Liskov Substitution. Consistent behavior for subclasses (e.g., all Notifications behave similarly).</li>
+                            <li><strong>ISP:</strong> Interface Segregation. Don't force mobile apps to consume desktop APIs.</li>
+                            <li><strong>DIP:</strong> Dependency Inversion. Business rules shouldn't depend on database details.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: INFRA -->
+            <div id="tech-infra" class="hidden space-y-8 animate-fade-in">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Cloud Native -->
+                    <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                        <h3 class="text-lg font-bold text-apple-text mb-4">Cloud Native</h3>
+                        <div class="space-y-4 text-xs text-apple-subtext">
+                            <div>
+                                <strong class="text-apple-text block">Containerization (Docker)</strong>
+                                Packages code + dependencies. Solves "it works on my machine".
+                            </div>
+                            <div>
+                                <strong class="text-apple-text block">Orchestration (K8s)</strong>
+                                Manages the fleet (Pods, Services). Enables auto-scaling and self-healing. High complexity tax.
+                            </div>
+                            <div>
+                                <strong class="text-apple-text block">Serverless</strong>
+                                Pay-per-use (0 cost for idle). Good for bursty workloads. Risk: Cold starts.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FinOps -->
+                    <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                        <h3 class="text-lg font-bold text-apple-text mb-4">FinOps</h3>
+                        <p class="text-xs text-apple-subtext mb-4">Shifting cloud spend from CapEx to OpEx. Accountability for variable spend.</p>
+                        <ul class="text-xs text-apple-subtext space-y-2 list-disc list-inside">
+                            <li><strong>Unit Economics:</strong> Optimize cost per transaction, not just total bill.</li>
+                            <li><strong>Tagging:</strong> Every dollar must be tagged to a team/product.</li>
+                            <li><strong>Forecasting:</strong> Predict variable spend to avoid "bill shock".</li>
+                        </ul>
+                    </div>
+                    <!-- Security -->
+                    <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                        <h3 class="text-lg font-bold text-apple-text mb-4">Security Protocols</h3>
+                        <div class="space-y-4">
+                            <div class="bg-red-50 p-3 rounded-lg">
+                                <strong class="block text-xs text-red-700">OAuth 2.0 (Authorization)</strong>
+                                <span class="text-[10px] text-gray-500">Access. "Valet Key". Allows app to act on user behalf.</span>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg">
+                                <strong class="block text-xs text-green-700">OIDC (Authentication)</strong>
+                                <span class="text-[10px] text-gray-500">Identity. "ID Badge". Login with Google.</span>
+                            </div>
+                            <div class="text-xs text-apple-subtext mt-2">
+                                <strong>Certifications:</strong>
+                                <br>• CISSP: Technical (Engineer)
+                                <br>• CISM: Governance/Risk (Executive)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: STRATEGY PHYSICS -->
+        <section id="strategy" class="mb-32 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+                <div class="w-8 h-8 rounded-lg bg-gray-900 text-white flex items-center justify-center font-bold text-sm">II</div>
+                <h2 class="text-2xl font-bold tracking-tight text-apple-text">Strategy & Economic Physics</h2>
+            </div>
+
+            <!-- 7 Powers -->
+            <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100 mb-8">
+                <h3 class="text-xl font-bold text-apple-text mb-2">Hamilton Helmer's 7 Powers</h3>
+                <p class="text-sm text-apple-subtext mb-6">The statics of enduring differential returns. Without one, you are a commodity.</p>
+                <div class="dense-grid">
+                    <div class="p-4 bg-gray-50 rounded-2xl">
+                        <strong class="text-sm text-apple-text block mb-1">Scale Economies</strong>
+                        <p class="text-xs text-apple-subtext">Unit costs decline as volume increases. High fixed cost, zero marginal cost (Software).</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-2xl">
+                        <strong class="text-sm text-apple-text block mb-1">Network Economies</strong>
+                        <p class="text-xs text-apple-subtext">Value increases as user base grows.
+                        <br><em class="text-gray-400">Distinction:</em> Virality (Acquisition) vs Network Effect (Defensibility).</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-2xl">
+                        <strong class="text-sm text-apple-text block mb-1">Counter-Positioning</strong>
+                        <p class="text-xs text-apple-subtext">New model incumbent cannot copy without damaging existing business (Netflix vs Blockbuster).</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-2xl">
+                        <strong class="text-sm text-apple-text block mb-1">Switching Costs</strong>
+                        <p class="text-xs text-apple-subtext">Value loss if customer leaves. Operational entanglement, not just contracts.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-2xl">
+                        <strong class="text-sm text-apple-text block mb-1">Branding</strong>
+                        <p class="text-xs text-apple-subtext">Attribution of higher value to identical offering. Reduces risk (IBM effect).</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-2xl">
+                        <strong class="text-sm text-apple-text block mb-1">Cornered Resource</strong>
+                        <p class="text-xs text-apple-subtext">Preferential access to coveted asset (Patents, Talent density, Data set).</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-2xl">
+                        <strong class="text-sm text-apple-text block mb-1">Process Power</strong>
+                        <p class="text-xs text-apple-subtext">Embedded complex organization process that yields lower cost/superior product (Toyota).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Aggregation Theory -->
+                <div class="bg-gray-900 rounded-3xl p-8 shadow-soft border border-gray-800 text-white">
+                    <h3 class="text-lg font-bold mb-2">Aggregation Theory</h3>
+                    <p class="text-xs text-gray-400 mb-6">Power shifts to those who control demand. Zero marginal cost of distribution.</p>
+                    <div class="space-y-4">
+                        <div class="border-l-2 border-blue-500 pl-4">
+                            <strong class="block text-sm">Level 1: Supply Acquisition Cost</strong>
+                            <p class="text-xs text-gray-400">Netflix. Must pay to produce/license supply. Scaling constrained by capital.</p>
+                        </div>
+                        <div class="border-l-2 border-blue-500 pl-4">
+                            <strong class="block text-sm">Level 2: Supply Transaction Cost</strong>
+                            <p class="text-xs text-gray-400">Uber. Does not own cars, but pays per ride. Scaling constrained by physical supply.</p>
+                        </div>
+                        <div class="border-l-2 border-green-500 pl-4">
+                            <strong class="block text-sm text-green-400">Level 3: Zero Supply Cost</strong>
+                            <p class="text-xs text-gray-400">Google/Facebook. Users provide supply for free. Pure aggregation. Max margins.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network Effects Deep Dive -->
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                    <h3 class="text-lg font-bold text-apple-text mb-4">Network Effects (NFX 16 Types)</h3>
+                    <p class="text-xs text-apple-subtext mb-4">Not all moats are equal.</p>
+                    <ul class="text-xs text-apple-subtext space-y-3">
+                        <li>
+                            <strong class="text-apple-text">Direct:</strong> Metcalfe's Law. Telephones. Strongest.
+                        </li>
+                        <li>
+                            <strong class="text-apple-text">2-Sided:</strong> Marketplaces (Supply/Demand). Hard to crack (Chicken/Egg).
+                        </li>
+                        <li>
+                            <strong class="text-apple-text">Data:</strong> Product gets smarter with data (Waze). <em>Warning:</em> Asymptotic (eventually data is "good enough" and moat weakens).
+                        </li>
+                        <li>
+                            <strong class="text-apple-text">Tech Performance:</strong> Tech gets faster with more nodes (BitTorrent).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Positioning & GTM -->
+            <div class="mt-8 bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                <h3 class="text-xl font-bold text-apple-text mb-6">Positioning & GTM Architecture</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-sm text-apple-text mb-3">Dunford's Positioning (10 Steps)</h4>
+                        <div class="text-xs text-apple-subtext space-y-2">
+                            <p>1. Ignore "Average" users; focus on Best-Fit.</p>
+                            <p>2. List Competitive Alternatives (e.g., Excel, "Do nothing").</p>
+                            <p>3. Isolate Unique Attributes.</p>
+                            <p>4. Map Attributes to Value Clusters.</p>
+                            <p>5. Determine Who Cares (ICP).</p>
+                            <p>6. Find Market Frame of Reference (Context).</p>
+                            <p><strong>Strategic Narrative:</strong> Don't use "Positioning Statements". Use a narrative that sells a "Change in the World".</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-apple-text mb-3">Modern GTM Motions</h4>
+                        <div class="space-y-3">
+                            <div class="p-3 border border-blue-100 bg-blue-50 rounded-xl">
+                                <strong class="text-xs text-blue-800 block">Product-Led Sales (PLS)</strong>
+                                <span class="text-[10px] text-blue-600">Hybrid. Product hooks user (PLG) -> Data identifies PQL (Product Qualified Lead) -> Sales closes Enterprise deal.</span>
+                            </div>
+                            <div class="p-3 border border-purple-100 bg-purple-50 rounded-xl">
+                                <strong class="text-xs text-purple-800 block">Ecosystem-Led Growth (ELG)</strong>
+                                <span class="text-[10px] text-purple-600">Map customer overlaps with partners (Crossbeam). Borrow trust. Embed in solution mesh.</span>
+                            </div>
+                            <div class="p-3 border border-gray-100 bg-gray-50 rounded-xl">
+                                <strong class="text-xs text-gray-800 block">API-First GTM</strong>
+                                <span class="text-[10px] text-gray-600">DevEx is marketing. Minimize "Time to First Call". Bottom-up developer adoption -> Top-down enterprise control.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: FINANCE -->
+        <section id="finance" class="mb-32 scroll-mt-24">
+             <div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+                <div class="w-8 h-8 rounded-lg bg-gray-900 text-white flex items-center justify-center font-bold text-sm">III</div>
+                <h2 class="text-2xl font-bold tracking-tight text-apple-text">Financial Engineering (Metrics 2.0)</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Metrics -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Rule of 40 & Burn -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                            <h3 class="font-bold text-sm text-apple-text mb-2">Rule of 40</h3>
+                            <p class="text-xs text-apple-subtext mb-4">Growth % + Profit % >= 40</p>
+                            <div class="text-xs text-apple-subtext">
+                                <span class="block mb-1"><strong>Weighted Rule:</strong> (1.33 x Growth) + (0.67 x Profit). Favors growth but demands efficiency.</span>
+                                <span class="block"><strong>Trade-off:</strong> 100% growth can burn 60%. 20% growth must yield 20% profit.</span>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                            <h3 class="font-bold text-sm text-apple-text mb-2">Burn Multiple</h3>
+                            <p class="text-xs text-apple-subtext mb-4">Net Burn / Net New ARR</p>
+                            <ul class="text-xs space-y-1">
+                                <li class="text-apple-success"><strong>< 1.0x:</strong> Efficient (Top Decile)</li>
+                                <li class="text-apple-warning"><strong>1.5x - 2.0x:</strong> Suspect</li>
+                                <li class="text-apple-danger"><strong>> 3.0x:</strong> Crisis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Retention -->
+                    <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                        <h3 class="font-bold text-lg text-apple-text mb-4">Retention Dynamics</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-xl">
+                                <strong class="text-sm block mb-1">GRR (Gross)</strong>
+                                <p class="text-xs text-apple-subtext">Excludes upsells. The "Truth Teller" of Product-Market Fit. Target 90%+.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-xl">
+                                <strong class="text-sm block mb-1">NRR (Net)</strong>
+                                <p class="text-xs text-apple-subtext">Includes upsells. The "Growth Engine". Target 120%+. Warning: High NRR can mask poor GRR.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pricing & Capital -->
+                    <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                        <h3 class="font-bold text-lg text-apple-text mb-4">Pricing & Capital Structure</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="text-xs font-bold text-apple-text uppercase mb-2">Usage-Based Pricing</h4>
+                                <p class="text-xs text-apple-subtext mb-2">Aligns price with value. Uncapped upside.</p>
+                                <strong class="text-xs text-apple-text block mt-2">Game Theory:</strong>
+                                <p class="text-xs text-apple-subtext">Avoid "Prisoner's Dilemma" (race to bottom) via complex bundling. Use High Price as Signaling.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-apple-text uppercase mb-2">Cap Table Warning</h4>
+                                <ul class="text-xs text-apple-subtext space-y-2">
+                                    <li><strong>Liquidation Prefs:</strong> Avoid "Participating Preferred" (Double dip).</li>
+                                    <li><strong>Option Pool Shuffle:</strong> Ensure pool is topped up post-money to avoid founder dilution.</li>
+                                    <li><strong>Waterfall Analysis:</strong> Only way to see "real" value.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROI Calculator -->
+                <div class="bg-gray-900 rounded-3xl p-8 shadow-soft border border-gray-800 text-white flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold mb-2">LTV:CAC Calculator</h3>
+                        <p class="text-xs text-gray-400 mb-6">Fundamental unit economics.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">LTV ($)</label>
+                                <input type="number" id="ltvInput" class="block w-full rounded-xl border-gray-700 bg-gray-800 p-3 text-white focus:bg-gray-700 transition-all outline-none" placeholder="3000">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">CAC ($)</label>
+                                <input type="number" id="cacInput" class="block w-full rounded-xl border-gray-700 bg-gray-800 p-3 text-white focus:bg-gray-700 transition-all outline-none" placeholder="1000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-800 text-center">
+                        <div id="ratioResult" class="text-4xl font-bold text-blue-400">---</div>
+                        <div id="ratioStatus" class="text-xs font-bold uppercase mt-1 text-gray-500">Target > 3:1</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: OPS & GOVERNANCE -->
+        <section id="ops" class="mb-32 scroll-mt-24">
+             <div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+                <div class="w-8 h-8 rounded-lg bg-gray-900 text-white flex items-center justify-center font-bold text-sm">IV</div>
+                <h2 class="text-2xl font-bold tracking-tight text-apple-text">Operating Systems & Governance</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Team Topologies -->
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                    <h3 class="text-lg font-bold text-apple-text mb-4">Org Design (Team Topologies)</h3>
+                    <p class="text-xs text-apple-subtext mb-4">Optimize for Fast Flow. Minimize Cognitive Load.</p>
+                    <div class="space-y-3">
+                        <details class="group">
+                            <summary class="flex justify-between items-center text-xs font-bold text-apple-text cursor-pointer bg-gray-50 p-3 rounded-lg">
+                                1. Stream-Aligned Teams
+                                <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
+                            </summary>
+                            <div class="text-xs text-apple-subtext p-3 pt-0 bg-gray-50 rounded-b-lg">
+                                Primary unit. Aligned to user journey. "You build it, you run it."
+                            </div>
+                        </details>
+                        <details class="group">
+                            <summary class="flex justify-between items-center text-xs font-bold text-apple-text cursor-pointer bg-gray-50 p-3 rounded-lg">
+                                2. Platform Teams
+                                <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
+                            </summary>
+                            <div class="text-xs text-apple-subtext p-3 pt-0 bg-gray-50 rounded-b-lg">
+                                Provide internal self-service APIs/Tools. Reduces friction for Stream teams.
+                            </div>
+                        </details>
+                        <details class="group">
+                            <summary class="flex justify-between items-center text-xs font-bold text-apple-text cursor-pointer bg-gray-50 p-3 rounded-lg">
+                                3. Enabling Teams
+                                <span class="text-gray-400 group-open:rotate-180 transition">▼</span>
+                            </summary>
+                            <div class="text-xs text-apple-subtext p-3 pt-0 bg-gray-50 rounded-b-lg">
+                                Internal consultants (e.g., Security, Architecture) who upskill streams.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Governance & Negotiation -->
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+                    <h3 class="text-lg font-bold text-apple-text mb-4">Executive Tactics</h3>
+                    
+                    <div class="mb-6">
+                        <strong class="text-sm text-apple-text block mb-2">Negotiation (The Black Swan)</strong>
+                        <ul class="text-xs text-apple-subtext space-y-2">
+                            <li><strong>Mirroring:</strong> Repeat last 3 words. Builds connection.</li>
+                            <li><strong>Labeling:</strong> "It seems like..." Validates emotion.</li>
+                            <li><strong>Accusation Audit:</strong> List all negatives upfront. Disarms objections.</li>
+                            <li><strong>No > Yes:</strong> "Have you given up on...?" makes people feel safe.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <strong class="text-sm text-apple-text block mb-2">Decision Velocity</strong>
+                        <ul class="text-xs text-apple-subtext space-y-2">
+                            <li><strong>Amazon 6-Pager:</strong> Silent start meetings. Narrative forces clarity.</li>
+                            <li><strong>NCTs vs OKRs:</strong> Narratives, Commitments (100% binary), Tasks. Connects strategy to tickets better than OKRs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CAREER ROADMAP -->
+        <section id="career" class="mb-24 scroll-mt-24">
+             <div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+                <div class="w-8 h-8 rounded-lg bg-gray-900 text-white flex items-center justify-center font-bold text-sm">V</div>
+                <h2 class="text-2xl font-bold tracking-tight text-apple-text">The Path to C-Suite</h2>
+            </div>
+
+            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-soft text-white">
+                <h3 class="text-xl font-bold mb-2">From Analyst to "Strategic Engineer"</h3>
+                <p class="text-sm text-gray-400 mb-8 max-w-3xl">
+                    The transition requires shedding the identity of "Requirements Gatherer" and assuming the identity of "Outcome Architect". You utilize modeling, simulation, and data to secure business continuity.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+                    <div class="border-t border-gray-700 pt-4">
+                        <strong class="text-blue-400 block mb-2">1. Technical Business Analyst</strong>
+                        <span class="text-gray-400 block mb-2">Current State</span>
+                        <ul class="text-xs text-gray-500 list-disc list-inside">
+                            <li>Execution & Compliance</li>
+                            <li>Process Models</li>
+                            <li>Uptime Focus</li>
+                        </ul>
+                    </div>
+                    <div class="border-t border-gray-700 pt-4">
+                        <strong class="text-purple-400 block mb-2">2. Platform Product Manager</strong>
+                        <span class="text-gray-400 block mb-2">The Bridge</span>
+                        <ul class="text-xs text-gray-500 list-disc list-inside">
+                            <li>Scalability & Leverage</li>
+                            <li>API Roadmaps</li>
+                            <li>Developer Experience (DX)</li>
+                        </ul>
+                    </div>
+                    <div class="border-t border-gray-700 pt-4">
+                        <strong class="text-apple-success block mb-2">3. Strategic C-Suite (CPO/CTO)</strong>
+                        <span class="text-gray-400 block mb-2">The Goal</span>
+                        <ul class="text-xs text-gray-500 list-disc list-inside">
+                            <li>Portfolio Strategy</li>
+                            <li>Capital Allocation</li>
+                            <li>Valuation & Moats</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
+                    <strong class="block text-sm mb-2">Actionable Skill Plan</strong>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-gray-400">
+                        <div>
+                            <span class="text-white block mb-1">FinOps</span>
+                            AWS Cloud Practitioner
+                        </div>
+                        <div>
+                            <span class="text-white block mb-1">Governance</span>
+                            CISM (Not CISSP)
+                        </div>
+                        <div>
+                            <span class="text-white block mb-1">Strategy</span>
+                            Wardley Mapping
+                        </div>
+                        <div>
+                            <span class="text-white block mb-1">Comms</span>
+                            Minto Pyramid Principle
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-apple-subtext text-sm">Strategic Engineering Handbook | 2025 Comprehensive Edition</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Tab Logic ---
+        function switchTab(group, tabName) {
+            // Hide all tabs in this group
+            const tabs = document.querySelectorAll(`[id^="${group}-"]`);
+            tabs.forEach(tab => tab.classList.add('hidden'));
+
+            // Show selected tab
+            const selected = document.getElementById(`${group}-${tabName}`);
+            selected.classList.remove('hidden');
+
+            // Update buttons
+            const btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(btn => {
+                btn.classList.remove('active', 'font-semibold');
+                btn.classList.add('text-apple-subtext', 'font-medium');
+                if(btn.onclick.toString().includes(tabName)) {
+                    btn.classList.add('active', 'font-semibold');
+                    btn.classList.remove('text-apple-subtext', 'font-medium');
+                }
+            });
+        }
+
+        // --- LTV:CAC Logic ---
+        const ltvInput = document.getElementById('ltvInput');
+        const cacInput = document.getElementById('cacInput');
+        const ratioResult = document.getElementById('ratioResult');
+        const ratioStatus = document.getElementById('ratioStatus');
+
+        function calcLTVCAC() {
+            const ltv = parseFloat(ltvInput.value);
+            const cac = parseFloat(cacInput.value);
+
+            if (ltv > 0 && cac > 0) {
+                const ratio = (ltv / cac).toFixed(1);
+                ratioResult.textContent = ratio + ":1";
+                if (ratio >= 3) {
+                    ratioResult.classList.remove('text-red-500', 'text-yellow-500');
+                    ratioResult.classList.add('text-green-400');
+                    ratioStatus.textContent = "Healthy (Scale)";
+                    ratioStatus.className = "text-xs font-bold uppercase mt-1 text-green-500";
+                } else if (ratio >= 1.5) {
+                    ratioResult.classList.remove('text-red-500', 'text-green-400');
+                    ratioResult.classList.add('text-yellow-500');
+                    ratioStatus.textContent = "Caution";
+                    ratioStatus.className = "text-xs font-bold uppercase mt-1 text-yellow-500";
+                } else {
+                    ratioResult.classList.remove('text-green-400', 'text-yellow-500');
+                    ratioResult.classList.add('text-red-500');
+                    ratioStatus.textContent = "Unsustainable";
+                    ratioStatus.className = "text-xs font-bold uppercase mt-1 text-red-500";
+                }
+            }
+        }
+        ltvInput.addEventListener('input', calcLTVCAC);
+        cacInput.addEventListener('input', calcLTVCAC);
+
+    </script>
+</body>
 </html>
